@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MultiStepService } from '../_services/multi-step.service';
 
 @Component({
   selector: 'app-multi-form',
@@ -14,7 +15,7 @@ export class MultiFormComponent implements OnInit {
   nextUrl : string = '/step2'
   multiFG : FormGroup;
 
-  constructor() { }
+  constructor(private sharedSrvc : MultiStepService) { }
 
   ngOnInit() {
     this.multiFG = new FormGroup({

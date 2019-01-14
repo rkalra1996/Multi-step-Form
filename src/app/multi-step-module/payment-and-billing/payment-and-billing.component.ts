@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { MultiStepService } from '../_services/multi-step.service';
 
 @Component({
   selector: 'app-payment-and-billing',
@@ -14,7 +15,7 @@ export class PaymentAndBillingComponent implements OnInit {
 
   paymentFG : FormGroup;
 
-  constructor() { }
+  constructor(private sharedSrvc : MultiStepService) { }
 
   ngOnInit() {
     this.paymentFG = new FormGroup({

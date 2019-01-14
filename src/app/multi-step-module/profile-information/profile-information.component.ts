@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MultiStepService } from '../_services/multi-step.service';
 
 @Component({
   selector: 'app-profile-information',
@@ -14,7 +15,7 @@ export class ProfileInformationComponent implements OnInit {
   nextUrl : string = '/step3'
   detailsFG : FormGroup;
 
-  constructor() { }
+  constructor(private sharedSrvc : MultiStepService) { }
 
   ngOnInit() {
     this.detailsFG = new FormGroup({
