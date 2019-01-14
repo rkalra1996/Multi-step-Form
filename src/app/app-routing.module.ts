@@ -6,7 +6,7 @@ import { MultiStepModuleRoutingModule } from './multi-step-module/multi-step-mod
 const routes: Routes = [
   {
     path: "",
-    loadChildren : "../app/multi-step-module/multi-step-module.module.ts#MultiStepModuleModule"
+    loadChildren : "./multi-step-module/multi-step-module.module.ts#MultiStepModuleModule"
   }
 ]
 
