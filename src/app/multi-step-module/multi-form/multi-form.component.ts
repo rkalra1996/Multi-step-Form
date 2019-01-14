@@ -25,6 +25,6 @@ export class MultiFormComponent implements OnInit {
   }
 
   onSubmit() : void{
-    console.log(this.multiFG.value);
+    this.sharedSrvc.sendData(this.multiFG.value);
   }
 }

@@ -26,6 +26,6 @@ export class ProfileInformationComponent implements OnInit {
   }
 
   onSubmit() : void{
-    console.log(this.detailsFG.value);
+    this.sharedSrvc.sendData(this.detailsFG.value);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MultiStepService } from '../_services/multi-step.service';
+import { getViewData } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-payment-and-billing',
@@ -23,10 +24,16 @@ export class PaymentAndBillingComponent implements OnInit {
       CVV : new FormControl('', [Validators.required, Validators.maxLength(3)]),
       HolderName : new FormControl('', [Validators.required, Validators.minLength(4)])
     });
+    
+    this.getViewData().subscribe(data => {
+      console.log("data recieved in billing is ", data);
+  });
   }
-
   onSubmit() : void{
-    console.log(this.paymentFG.value);
+    this.sharedSrvc.sendData(this.paymentFG.value);
   }
 
+  getViewData(){
+    return this.sharedSrvc.getData();
+    }
 }
