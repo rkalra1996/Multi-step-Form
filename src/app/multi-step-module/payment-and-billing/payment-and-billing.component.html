@@ -11,13 +11,19 @@
         <div class="row row col-sm-12 col-md-5 multi-form-body">
           <form [formGroup]="paymentFG">
             <div class="row col-sm-12 col-md-5 form-row">
-                <label>Card :</label><input type="text" formControlName="CardNumber" maxlength="16">
+                <input type="number" formControlName="CardNumber" class="form-control" placeholder="Card Number">
+                <span *ngIf="(paymentFG.controls.CardNumber.dirty || paymentFG.controls.CardNumber.touched) && paymentFG.controls['CardNumber'].errors?.required"><p class="error-text-red">Empy value is not acceptable</p></span>
+                <span *ngIf="(paymentFG.controls.CardNumber.dirty || paymentFG.controls.CardNumber.touched) && paymentFG.controls['CardNumber'].errors?.maxlength"><p class="error-text-red">Length cannot exceed 16 digits</p></span>
             </div>
             <div class="row col-sm-12 col-md-5 form-row">
-                <label>Holder Name :</label><input type="text" formControlName="HolderName">
+                <input type="text" formControlName="HolderName">
+                <span *ngIf="(paymentFG.controls.HolderName.dirty || paymentFG.controls.HolderName.touched) && paymentFG.controls['HolderName'].errors?.required"><p class="error-text-red">Empy value is not acceptable</p></span>
+                <span *ngIf="(paymentFG.controls.HolderName.dirty || paymentFG.controls.HolderName.touched) && paymentFG.controls['HolderName'].errors?.minlength"><p class="error-text-red">You must have a name</p></span>
             </div>
             <div class="row col-sm-12 col-md-5 form-row">
-                <label>CVV :</label><input type="text" formControlName="CVV" placeholder="XXX">
+                <input type="number" formControlName="CVV" placeholder="CVV">
+                <span *ngIf="(paymentFG.controls.CVV.dirty || paymentFG.controls.CVV.touched) && paymentFG.controls['CVV'].errors?.required"><p class="error-text-red">Empy value is not acceptable</p></span>
+                <span *ngIf="(paymentFG.controls.CVV.dirty || paymentFG.controls.CVV.touched) && paymentFG.controls['CVV'].errors?.maxlength"><p class="error-text-red">Length cannot exceed 3 digits</p></span>
             </div>
           </form>
         </div>

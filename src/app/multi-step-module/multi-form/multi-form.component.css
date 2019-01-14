@@ -42,7 +42,6 @@ div {
 ol {
     position: relative;
     overflow: hidden;
-    counter-reset: wizard;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -52,7 +51,7 @@ ol {
     position: relative;
     float: left;
     width: 33.33%;
-    height: 45px;
+    height: 50px;
     text-align: center;
     padding-top: 10px;
     cursor: pointer;
@@ -63,12 +62,20 @@ ol {
     min-height: 37vh;
 }
 
-.form-row {
-    width: 100%;
+.form {
+    text-align: center;
+    position: relative;
+    margin: auto;
 }
 
-.form-row::after {
-    margin-bottom: 10px;
+.form-row {
+    width: 100%;
+    margin: auto;
+    clear: both;
+}
+
+.error-text-red {
+    color: red;
 }
 
 .multi-form-button {

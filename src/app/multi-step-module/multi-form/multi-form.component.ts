@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-multi-form',
@@ -11,10 +12,18 @@ export class MultiFormComponent implements OnInit {
   step2Title : string = 'Profile Details'
   step3Title : string = 'Payment and Billing'
   nextUrl : string = '/step2'
+  multiFG : FormGroup;
 
   constructor() { }
 
   ngOnInit() {
+    this.multiFG = new FormGroup({
+      TotalItems : new FormControl('', [Validators.required,Validators.maxLength(16)]),
+      ShippingAddr : new FormControl('', [Validators.required, Validators.minLength(5)]),
+    });
   }
 
+  onSubmit() : void{
+    console.log(this.multiFG.value);
+  }
 }
