@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileInformationComponent implements OnInit {
 
+  step1Title : string = 'Basic Details'
+  stepTitle : string = 'Profile Details'
+  step3Title : string = 'Payment and Billing'
+  nextUrl : string = '/step3'
+
   constructor() { }
 
   ngOnInit() {

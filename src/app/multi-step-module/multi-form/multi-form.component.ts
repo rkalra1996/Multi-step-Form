@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MultiFormComponent implements OnInit {
 
+  stepTitle : string = 'Basic Details'
+  step2Title : string = 'Profile Details'
+  step3Title : string = 'Payment and Billing'
+  nextUrl : string = '/step2'
+
   constructor() { }
 
   ngOnInit() {

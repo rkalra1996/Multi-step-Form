@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentAndBillingComponent implements OnInit {
 
+  step1Title : string = 'Basic Details'
+  step2Title : string = 'Profile Details'
+  stepTitle : string = 'Payment and Billing'
+  nextUrl : string = '/404'
+
   constructor() { }
 
   ngOnInit() {
