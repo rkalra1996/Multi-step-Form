@@ -1,5 +1,66 @@
+div {
+    padding: 0;
+    margin: 0;
+    margin: auto;
+}
+
+ol {
+    position: relative;
+    overflow: hidden;
+    counter-reset: wizard;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    text-align: center;
+  }
+
 .multiForm {
     width: 100%;
-    height: 100%;
+    height: 85vh;
     margin: 0;
+    background: radial-gradient(#FFF176, #F57F17);
+    padding: 0;
+}
+.card-container {
+    position: realtive;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.card {
+    position: absolute;
+    width: 50%;
+    background: white;
+    border-radius: 10px;
+    padding: 0;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+}
+
+.multi-breadcrumb {
+    width: 100%;
+    min-height: 50px;
+}
+
+.multi-form-body {
+    width: 100%;
+    min-height: 37vh;
+}
+
+.multi-form-button {
+    width: 100%;
+}
+
+.multi-form-button > button {
+    width: 120px;
+    margin-right : 20px;
+    margin-bottom: 20px;
 }
