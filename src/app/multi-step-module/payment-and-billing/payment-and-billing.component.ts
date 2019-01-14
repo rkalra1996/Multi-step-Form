@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-payment-and-billing',
@@ -12,9 +13,20 @@ export class PaymentAndBillingComponent implements OnInit {
   stepTitle : string = 'Payment and Billing'
   nextUrl : string = '/404'
 
-  constructor() { }
+  paymentFG : FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.paymentFG = this.fb.group({
+      CardNumber : new FormControl('', [Validators.required]),
+      CVV : new FormControl('', [Validators.required]),
+      HolderName : new FormControl('', [Validators.required])
+    });
+  }
+
+  onSubmit() : void{
+    console.log(this.paymentFG.value);
   }
 
 }

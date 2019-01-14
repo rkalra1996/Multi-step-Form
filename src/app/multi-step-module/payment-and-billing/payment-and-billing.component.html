@@ -8,9 +8,21 @@
                 <li class="current" routerLink="/step3">{{stepTitle}}</li>
               </ol>
         </div>
-        <div class="row row col-sm-12 col-md-5 multi-form-body">This is {{stepTitle}}'s body</div>
+        <div class="row row col-sm-12 col-md-5 multi-form-body">
+          <form [formGroup]="paymentFG">
+            <div class="row col-sm-12 col-md-5 form-row">
+                <label>Card :</label><input type="text" formControlName="CardNumber" maxlength="16">
+            </div>
+            <div class="row col-sm-12 col-md-5 form-row">
+                <label>Holder Name :</label><input type="text" formControlName="HolderName">
+            </div>
+            <div class="row col-sm-12 col-md-5 form-row">
+                <label>CVV :</label><input type="text" formControlName="CVV" placeholder="XXX">
+            </div>
+          </form>
+        </div>
         <div class="row row col-sm-12 col-md-5 multi-form-button">
-          <button class="btn btn-success pull-right" routerLink="{{nextUrl}}">Next</button>
+          <button class="btn btn-success pull-right" type="submit" (click)="onSubmit()" [disabled]="!paymentFG.valid">Submit</button>
         </div>
       </div>
     </div>

@@ -7,9 +7,12 @@ import { NotFound404Component } from './_server-error-components/not-found404/no
 import { PaymentAndBillingComponent } from './payment-and-billing/payment-and-billing.component';
 import { ProfileInformationComponent } from './profile-information/profile-information.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MultiStepModuleRoutingModule
   ],
   declarations: [
@@ -19,6 +22,7 @@ import { ProfileInformationComponent } from './profile-information/profile-infor
   exports : [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MultiFormComponent,
     MultiStepModuleRoutingModule
   ]

@@ -63,6 +63,14 @@ ol {
     min-height: 37vh;
 }
 
+.form-row {
+    width: 100%;
+}
+
+.form-row::after {
+    margin-bottom: 10px;
+}
+
 .multi-form-button {
     width: 100%;
 }
