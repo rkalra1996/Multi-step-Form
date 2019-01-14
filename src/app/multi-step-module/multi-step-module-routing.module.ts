@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: '404',
     component: NotFound404Component
+  },
+  {
+    path: '**',
+    component : NotFound404Component
   }
 ];
 
