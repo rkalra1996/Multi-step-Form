@@ -3,6 +3,7 @@
     color: white;
     text-align: center;
     border-radius: 0;
+    margin-bottom: 0;
 }
 
 .navbar a {
@@ -12,4 +13,8 @@
 
 .navbar a:hover {
     color: white;
+}
+
+.container {
+    margin-top: 6vh;   
 }
