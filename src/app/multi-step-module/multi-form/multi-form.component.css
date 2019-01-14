@@ -4,22 +4,6 @@ div {
     margin: auto;
 }
 
-ol {
-    position: relative;
-    overflow: hidden;
-    counter-reset: wizard;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    position: relative;
-    float: left;
-    width: 33.33%;
-    text-align: center;
-  }
-
 .multiForm {
     width: 100%;
     height: 85vh;
@@ -45,10 +29,34 @@ ol {
     right: 20%;
 }
 
+.current {
+    background-color: #F57F17;
+    color: white;
+}
+
 .multi-breadcrumb {
     width: 100%;
     min-height: 50px;
 }
+
+ol {
+    position: relative;
+    overflow: hidden;
+    counter-reset: wizard;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 45px;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+  }
 
 .multi-form-body {
     width: 100%;
