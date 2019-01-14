@@ -3,14 +3,14 @@
     <div class="card">
       <div class="row row col-sm-12 col-md-5 multi-breadcrumb">
           <ol>
-              <li class="">Step 1</li>
-              <li class="current">Step 2</li>
-              <li class="">Step 3</li>
+              <li class="current" routerLink="">Basic Details</li>
+                <li class="" routerLink="/step2">Profile Details</li>
+                <li class="" routerLink="/step3">Payment and Bililng</li>
             </ol>
       </div>
       <div class="row row col-sm-12 col-md-5 multi-form-body">This is form body</div>
       <div class="row row col-sm-12 col-md-5 multi-form-button">
-        <button type="submit" class="btn btn-success pull-right">Next</button>
+        <button routerLink="/step2" class="btn btn-success pull-right">Next</button>
       </div>
     </div>
   </div>
