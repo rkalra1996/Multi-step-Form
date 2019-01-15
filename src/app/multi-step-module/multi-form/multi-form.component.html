@@ -10,18 +10,19 @@
       </div>
       <div class="row row col-sm-12 col-md-5 multi-form-body">
           <form [formGroup]="multiFG">
-            <div class="row col-sm-12 col-md-5 form-row">
+            <div class="row col-sm-12 col-md-5 form-row1">
                 <input type="number" formControlName="TotalItems" class="form-control" placeholder="Total Items">
-                <span *ngIf="(multiFG.controls.TotalItems.dirty || multiFG.controls.TotalItems.touched) && multiFG.controls['TotalItems'].errors?.required"><p class="error-text-red">Empy value is not acceptable</p></span>
+                <span *ngIf="(multiFG.controls.TotalItems.dirty || multiFG.controls.TotalItems.touched) && multiFG.controls['TotalItems'].errors?.required"><p class="error-text-red">Empy items is not acceptable</p></span>
+                <span *ngIf="(multiFG.controls.TotalItems.dirty || multiFG.controls.TotalItems.touched) && multiFG.controls['TotalItems'].errors?.maxlength"><p class="error-text-red">This number is too high</p></span>
             </div>
-            <div class="row col-sm-12 col-md-5 form-row">
-                <input type="text" formControlName="ShippingAddr" placeholder="Shipping Address">
+            <div class="row col-sm-12 col-md-5 form-row1">
+                <input type="text" formControlName="ShippingAddr" class="form-control" placeholder="Shipping Address">
                 <span *ngIf="(multiFG.controls.ShippingAddr.dirty || multiFG.controls.ShippingAddr.touched) && multiFG.controls['ShippingAddr'].errors?.required"><p class="error-text-red">Empy address is not acceptable</p></span>
             </div>
           </form>
         </div>
         <div class="row row col-sm-12 col-md-5 multi-form-button">
-            <button routerLink="{{nextUrl}}" class="btn btn-success pull-right" (click)="onSubmit()">Next</button>
+            <button routerLink="{{nextUrl}}" class="btn btn-success pull-right" (click)="onSubmit()" [disabled]="!multiFG.valid">Next</button>
         </div>
       </div>
     </div>

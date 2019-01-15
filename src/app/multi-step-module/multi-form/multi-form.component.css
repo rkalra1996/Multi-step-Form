@@ -11,6 +11,11 @@ div {
     background: radial-gradient(#FFF176, #F57F17);
     padding: 0;
 }
+
+input {
+    width: 100%;
+    margin-top: 10px;
+}
 .card-container {
     position: realtive;
     padding: 0;
@@ -60,18 +65,13 @@ ol {
 .multi-form-body {
     width: 100%;
     min-height: 37vh;
+    text-align: center;
 }
 
 .form {
     text-align: center;
     position: relative;
     margin: auto;
-}
-
-.form-row {
-    width: 100%;
-    margin: auto;
-    clear: both;
 }
 
 .error-text-red {
@@ -87,3 +87,10 @@ ol {
     margin-right : 20px;
     margin-bottom: 20px;
 }
+
+.form-row1 {
+    width: 70%;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 80px;
+}   

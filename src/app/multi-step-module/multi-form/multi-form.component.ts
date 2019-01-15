@@ -19,8 +19,8 @@ export class MultiFormComponent implements OnInit {
 
   ngOnInit() {
     this.multiFG = new FormGroup({
-      TotalItems : new FormControl('', [Validators.required,Validators.maxLength(16)]),
-      ShippingAddr : new FormControl('', [Validators.required, Validators.minLength(5)]),
+      TotalItems : new FormControl('', [Validators.required,Validators.maxLength(4)]),
+      ShippingAddr : new FormControl('', [Validators.required]),
     });
   }
 

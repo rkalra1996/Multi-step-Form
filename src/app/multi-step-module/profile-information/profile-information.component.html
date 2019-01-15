@@ -10,22 +10,22 @@
         </div>
         <div class="row row col-sm-12 col-md-5 multi-form-body">
             <form [formGroup]="detailsFG"class="form">
-              <div class="row col-sm-12 col-md-5 form-row">
-                  <input type="number" formControlName="FirstName" class="form-control" placeholder="First Name">
+              <div class="row col-sm-12 col-md-5 form-row1">
+                  <input type="text" formControlName="FirstName" class="form-control" placeholder="First Name">
                   <span *ngIf="(detailsFG.controls.FirstName.dirty || detailsFG.controls.FirstName.touched) && detailsFG.controls['FirstName'].errors?.required"><p class="error-text-red">Empy value is not acceptable</p></span>
               </div>
-              <div class="row col-sm-12 col-md-5 form-row">
-                  <input type="text" formControlName="LastName" placeholder="Last Name">
+              <div class="row col-sm-12 col-md-5 form-row1">
+                  <input type="text" formControlName="LastName" class="form-control" placeholder="Last Name">
                   <span *ngIf="(detailsFG.controls.LastName.dirty || detailsFG.controls.LastName.touched) && detailsFG.controls['LastName'].errors?.required"><p class="error-text-red">Empy address is not acceptable</p></span>
               </div>
-              <div class="row col-sm-12 col-md-5 form-row">
-                  <input type="text" formControlName="EmailID" placeholder="Email ID">
+              <div class="row col-sm-12 col-md-5 form-row1">
+                  <input type="text" formControlName="EmailID" class="form-control" placeholder="Email ID">
                   <span *ngIf="(detailsFG.controls.EmailID.dirty || detailsFG.controls.EmailID.touched) && detailsFG.controls['EmailID'].errors?.required"><p class="error-text-red">Empy email is not acceptable</p></span>
               </div>
             </form>
           </div>
           <div class="row row col-sm-12 col-md-5 multi-form-button">
-              <button routerLink="{{nextUrl}}" class="btn btn-success pull-right" (click)="onSubmit()">Next</button>
+              <button routerLink="{{nextUrl}}" class="btn btn-success pull-right" (click)="onSubmit()" [disabled]="!detailsFG.valid">Next</button>
           </div>
         </div>
       </div>

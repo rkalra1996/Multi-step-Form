@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MultiStepService } from '../_services/multi-step.service';
 import { getViewData } from '@angular/core/src/render3/instructions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-payment-and-billing',
@@ -20,8 +21,8 @@ export class PaymentAndBillingComponent implements OnInit {
 
   ngOnInit() {
     this.paymentFG = new FormGroup({
-      CardNumber : new FormControl('', [Validators.required,Validators.maxLength(16)]),
-      CVV : new FormControl('', [Validators.required, Validators.maxLength(3)]),
+      CardNumber : new FormControl('', [Validators.required,Validators.minLength(16)]),
+      CVV : new FormControl('', [Validators.required]),
       HolderName : new FormControl('', [Validators.required, Validators.minLength(4)])
     });
     
@@ -29,11 +30,11 @@ export class PaymentAndBillingComponent implements OnInit {
       console.log("data recieved in billing is ", data);
   });
   }
-  onSubmit() : void{
+  onSubmit() : void {
     this.sharedSrvc.sendData(this.paymentFG.value);
   }
 
-  getViewData(){
+  getViewData(): Observable<object> {
     return this.sharedSrvc.getData();
     }
 }

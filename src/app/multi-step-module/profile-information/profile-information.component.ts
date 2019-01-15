@@ -19,9 +19,9 @@ export class ProfileInformationComponent implements OnInit {
 
   ngOnInit() {
     this.detailsFG = new FormGroup({
-      FirstName : new FormControl('', [Validators.required,Validators.maxLength(16)]),
-      LastName : new FormControl('', [Validators.required, Validators.minLength(5)]),
-      EmailID : new FormControl('', [Validators.required,Validators.maxLength(16)])
+      FirstName : new FormControl('', [Validators.required,Validators.minLength(5)]),
+      LastName : new FormControl('', [Validators.required, Validators.minLength(3)]),
+      EmailID : new FormControl('', [Validators.required,Validators.maxLength(8)])
     });
   }
 
